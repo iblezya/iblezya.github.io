@@ -1,0 +1,91 @@
+@font-face {
+  font-family: Comfortaa-Light;
+  src: url(/static/Comfortaa-Light.ttf);
+}
+body {
+  font-family: Comfortaa-Light;
+  margin: 0;
+  padding: 0;
+}
+figure {
+  margin: 0;
+  z-index: 1;
+}
+.background-main img{
+  background-image: url(/images/main.jpg);
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+}
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  z-index: 2;
+}
+h1 {
+  margin: 0;
+}
+.header {
+  
+  background-color: #721121;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  z-index: 2;
+  position: relative;
+}
+.menu {
+  background-color: inherit;
+  height: inherit;
+  z-index: 2;
+  
+}
+.header ol {
+  display: flex;
+  height: inherit;
+  z-index: 2;
+  
+}
+.header ol li {
+  height: inherit;
+  z-index: 2;
+}
+#logo {
+  height: 45px;
+  padding-left: 60px;
+  position: relative;
+  z-index: 10;
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  z-index: 2;
+  background-color: inherit;
+}
+/* H E R O   I M A G E */
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50vh;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  color: coral;
+}
+p {
+  color: tomato;
+}

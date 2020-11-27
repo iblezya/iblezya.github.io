@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangulo</title>
+</head>
+<body>
+    <script>
+        function esTriangulo(a,b,c) {
+    var condicion1 = c - b < a && a < b + c;
+    var condicion2 = a - c < b && b < a + c;
+    var condicion3 = a - b < c && c < b + a; 
+    return condicion1 && condicion2 && condicion3;
+}
+function tipoTriangulo(a,b,c) {
+	var tipo = "";
+	if (esTriangulo(a,b,c)) {
+		// Evaluando el tipo de triangulo
+		if ((a===b) && (b===c) && (a===c)) {
+			tipo = "EQUILATRO"
+		} else if((a===b) || (b===c) || (a===c)) {
+			tipo = "ISOCELES"
+		} else {
+			tipo = "ESCALENO"
+		}
+	}
+	// Devolver el valor del tipo
+	return tipo;
+}
+//Funcion: Calcular el perimetro
+function calcularPerimetro(a,b,c) { // Devuelve un valor float (numero)
+	// Inicializar el perimetro
+	var perimetro = 0;
+	if (esTriangulo(a,b,c)) {
+		//Calculando el perimetro
+		perimetro = a + b + c;
+	}
+	// Devolver el valor del perimetro
+	return perimetro;
+}
+
+// Funcion: Calcular el area
+function calcularArea(a, b, c) { // Devuelve un valor float (numero)
+	//Inicializar el area
+	var area = 0;
+
+	if (esTriangulo(a,b,c)) {
+		//Calculando el area
+		//Calculando el semi-perimetro
+		//invocando a la funcion del perimetro
+		var sp = calcularPerimetro(a,b,c) / 2;
+		// Calulando el area
+		area = Math.sqrt(sp*(sp-a)*(sp-b)*(sp-c));
+	}
+	//Devolver el valor del area
+	return area;
+}
+
+// PROGRAMA PRINCIPAL
+
+// ENTRADA
+// Leer los lados del triangulo
+var A = prompt("Ingrese el Lado A : ");
+var B = prompt("Ingrese el Lado B : ");
+var C = prompt("Ingrese el Lado C : ");
+A = Number(A);
+B = Number(B);
+C = Number(C);
+
+// PROCESO
+// Invocar a las funciones
+var existe = esTriangulo(A,B,C);
+var tipo = tipoTriangulo(A,B,C);
+var perimetro = calcularPerimetro(A,B,C);
+var area = calcularArea(A,B,C);
+// SALIDA
+
+alert("Existe: " + existe);
+alert("Tipo: " + tipo);
+alert("Perimetro: " + perimetro.toString());
+alert("Area: " + area.toString());
+    </script>
+</body>
+</html>

@@ -5,34 +5,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gerson Jean Pierre</title>
+  <link rel="stylesheet" href="styles/indexstyle.css">
 </head>
 
 <body>
-  <header>
-    <nav>
+  <figure class="background-main">
+    <img src="/images/main.jpg" alt="">
+  </figure>
+  <header class="header">    
+    <figure class="header-images">
+      <img src="images/te-de-coca.svg" alt="" id="logo">      
+    </figure>
+    <nav class="menu">
       <ol>
         <li><a href="">Portafolio</a></li>
-        <li><a href="">Experiencia</a></li>
-        <li><a href="">Trabajemos juntos</a></li>
+        <li><a href="">Contacto</a></li>
+        <li><a href="/ejerciciosjs.html">Ejercicios</a></li>
       </ol>
     </nav>
   </header>
-  <section>
-    <h1>
-      Hola! Soy
-      <strong>Gerson Jean Pierre</strong>
-      <br />
-      Desarrollador en camino
-    </h1>
-    <img src="" alt=""> Imagen de portada
+  <section class="hero">
+    <div class="hero-text">
+      <h1>
+        Hola! Soy
+        <strong>Gerson Jean Pierre</strong>
+        <br />
+        Desarrollador en camino
+      </h1>
+    </div>
   </section>
-  <section>
+  <section class="portafolio">
     <h2>Portafolio</h2>
-    <article>
-      <h3>Gatsbyjs</h3>
-      <h6>Java basico</h6>
-      <p><small><strong>Fecha: </strong>25/11/2020</small></p>
-      <p>Blog personal haciendo uso de la tecnologia jamstack</p>
+    <article class="projectOne">
+      <h3 class="projectOne-title">Gatsbyjs</h3>
+      <h4 class="projectOne-course">Java basico</h4>
+      <p class="projectOne-fecha"><small><strong>Fecha: </strong>25/11/2020</small></p>
+      <p class="projectOne-description">Blog personal haciendo uso de la tecnologia jamstack</p>
     </article>
   </section>
   <section>seccion principal</section>
@@ -43,9 +51,7 @@
       <h3>
         Contactame
       </h3>
-      <label for="email">Dejame tu email</label>
       <input type="text" placeholder="Dejame tu email" id="email">
-      <input type="submit" value="texto del boton">
       <button>Enviar</button>
     </form>
   </section>
