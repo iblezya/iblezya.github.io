@@ -1,40 +1,42 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gerson Jean Pierre</title>
-  <link rel="stylesheet" href="styles/indexstyle.css">
-  <script src="https://kit.fontawesome.com/c4b7cb5e42.js" crossorigin="anonymous"></script>
-  <script src="/app.js"></script>
+  <link rel="stylesheet" href="/styles/style.css">
 </head>
 
-<body>
+<body>  
+  <!-- H E A D E R -->
   <header class="header">
-    <div class="menuBtn">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav class="header__navbar">
-      <figure class="header__navbar--logo">
-        <img src="images/te-de-coca.svg" alt="" id="logo">      
-      </figure>
-      <ol class="header__navbar--menu-list">
-        <div class="header__navbar--icon cancel-btn">
-          <i class="fas fa-times"></i>
+    <nav class="navbar">
+      <div class="navbar__left">
+        <ul>
+          <li><a class="navbar__left--link" href="#">Portafolio</a></li>
+          <li><a class="navbar__left--link" href="#">Sobre mi</a></li>
+          <li><a class="navbar__left--link" href="#">Dash</a></li>
+          <li><a class="navbar__left--link" href="#">Contactame</a></li>
+        </ul>
+        <div class="navbar__left--contact">
+          <p class="large">Lima, Peru</p>
+          <p class="small">+51 959733651</p>
+          <p class="small">iblezya@gmail.com</p>
         </div>
-        <li><a href="">Portafolio</a></li>
-        <li><a href="">Contacto</a></li>
-        <li><a href="#">Sobre mi</a></li>
-        <li><a href="/ejerciciosjs.html">Ejercicios</a></li>
-      </ol>
-      <div class="header__navbar--icon menu-btn">
-        <img src="/images/menuBtn.svg" alt="">
+      </div>
+      <div class="navbar__right"></div>
+      <div class="navbar__menuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </nav>
+    <figure class="logo">
+      <img src="/images/logon.svg" alt="">
+    </figure>
   </header>
+  <!-- M A I N -->
   <section class="banner">
     <div class="banner__text">
       <h1>
@@ -44,6 +46,9 @@
         Desarrollador en camino
       </h1>
     </div>
+    <figure class="banner__image">
+      <img src="/images/main.jpg" alt="">
+    </figure>
   </section>
   <section class="portafolio">
     <h2>Portafolio</h2>
@@ -63,7 +68,7 @@
       <button>Enviar</button>
     </form>
   </section>
-  <section class="footer">Footer</section>  
+  <section class="footer">Footer</section>
+  <script src="/app.js"></script>
 </body>
-
 </html>
