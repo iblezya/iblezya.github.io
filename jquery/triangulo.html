@@ -1,7 +1,126 @@
 <!--
 		A partir de los lados de un triangulo
-	 	determinar: si existe o no
-	 	Si existe, determinar el Tipo (equilatero, isoceles, escaleno)
-	 	Si existe, determinar el perimetro
-	 	Si existe, determinar el area
+    determinar: si existe o no
+  Si existe, determinar el Tipo (equilatero, isoceles, escaleno)
+  Si existe, determinar el perimetro
+  Si existe, determinar el area
 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triangulo: jQuery</title>
+  <link rel="stylesheet" href="style/stylo.css">
+  <script type="text/javascript" src="jquery/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#btnCalcular").click(function () {
+        // I N P U T
+        var ladoA = Number($("#ladoA").val());
+        var ladoB = Number($("#ladoB").val());
+        var ladoC = Number($("#ladoC").val());
+        //P R O C E S S
+        var existe = esTriangulo(ladoA, ladoB, ladoC) ? "Existe" : "No existe";
+        var tipo = tipoTriangulo(ladoA,ladoB,ladoC);
+        var perimetro = calcularPerimetro(ladoA, ladoB, ladoC);
+        var area = calcularArea(ladoA,ladoB,ladoC);
+        // O U T P U T
+        $("#existe").html("Existencia : " + existe);
+        $("#tipo").html("Tipo : " + tipo);
+        $("#perimetro").html("Perimetro: " + perimetro);
+        $("#area").html("Area : " + area);
+      })
+    });
+    // F U N C T I O N S
+    function esTriangulo(a, b, c) {
+        var condicion1 = (c - b < a) && (a < b + c);
+        var condicion2 = (a - c < b) && (b < a + c);
+        var condicion3 = (a - b < c) && (c < b + a);
+        return condicion1 && condicion2 && condicion3;
+    }
+    function tipoTriangulo(a, b, c) {
+        var tipo = "-";
+        if (esTriangulo(a, b, c)) {
+          // Evaluando el tipo de triangulo
+          if ((a === b) && (b === c) && (a === c)) {
+            tipo = "EQUILATRO"
+            $("#equilatero").show(500);
+          } else if ((a === b) || (b === c) || (a === c)) {
+            tipo = "ISOCELES"
+            $("#isosceles").show(500);
+          } else {
+            tipo = "ESCALENO"
+            $("#escaleno").show(500);
+          }
+        } else {
+        $(".triangule__image").hide();
+        }
+        // Devolver el valor del tipo
+        return tipo;
+    }
+    function calcularPerimetro(a, b, c) {
+        // Inicializar el perimetro
+        var perimetro = 0;
+        if (esTriangulo(a, b, c)) {
+          //Calculando el perimetro
+          perimetro = a + b + c;
+        }
+        // Devolver el valor del perimetro
+        return perimetro;
+    }
+    function calcularArea(a, b, c) {
+        //Inicializar el area
+        var area = 0;
+        if (esTriangulo(a, b, c)) {
+          //Calculando el area
+          //Calculando el semi-perimetro
+          //invocando a la funcion del perimetro
+          var sp = calcularPerimetro(a, b, c) / 2;
+          // Calulando el area
+          area = Math.sqrt(sp * (sp - a) * (sp - b) * (sp - c));
+        }
+        //Devolver el valor del area
+        return area;
+    }
+  </script>
+</head>
+<body>
+  <section class="triangule">
+    <div class="triangule__title">
+      <h1>Triangulo: jQuery</h1>
+    </div>
+    <div class="triangule__ladoA">
+      <label>Lado A :</label>
+      <input type="text" id="ladoA">
+    </div>
+    <div class="triangule__ladoB">
+      <label>Lado B :</label>
+      <input type="text" id="ladoB">
+    </div>
+    <div class="triangule__ladoC">
+      <label>Lado C :</label>
+      <input type="text" id="ladoC">
+    </div>
+    <button id="btnCalcular">Calcular</button>
+    <div class="triangule__calculos">
+      <p id="existe">Existencia : </p>
+      <p id="tipo">Tipo : </p>
+      <div class="triangule__image">
+        <svg id="equilatero" height="200" width="200">
+          <polygon points="90,10 190,190 10,190" stroke="purple" stroke-width=2 fill="aqua" />
+        </svg>
+        <svg id="escaleno" height="200" width="200">
+          <polygon points="45,40 180,190 80,190" stroke="purple" stroke-width=2 fill="aqua" />
+        </svg>
+        <svg id="isosceles" height="200" width="200">
+          <polygon points="90,85 190,190 10,190" stroke="purple" stroke-width=2 fill="aqua" />
+        </svg>
+      </div>
+      <p id="perimetro">Perimetro : </p>
+      <p id="area">Area : </p>
+    </div>    
+    <a id="back" href='/jquery/index.html'>Regresar</a>
+  </section>
+</body>
+</html>
