@@ -16,10 +16,12 @@ menuBtn.addEventListener('click', () => {
   // Remover
   contact.classList.remove('active');
   navRight.classList.remove('active');
+  logo.classList.remove("active");
   if (menuBtn.classList.contains('active')) {
     setTimeout(() => {
       navRight.classList.add('active');
-    }, 100)
+      logo.classList.add("active");
+    }, 120)
     for (let i = 0; i < navLinks.length; i++) {
       navLinks[i].classList.remove('active');
       setTimeout(() => {
@@ -29,7 +31,7 @@ menuBtn.addEventListener('click', () => {
     }
     setTimeout(() => {
       contact.classList.add('active');
-    }, 700)
+    }, 1000)
   }
 
 })

@@ -11,8 +11,10 @@
 /* N A V B A R */
 header{
   width: 100%;
-  background: gray;
-  height: 6em;
+  height: 5.5em;
+  box-shadow: 0px 4px 9px -1px rgba(42,66,81,0.85);
+  -webkit-box-shadow: 0px 4px 9px -1px rgba(42,66,81,0.85);
+  -moz-box-shadow: 0px 4px 9px -1px rgba(42,66,81,0.85);
 }
 .navbar {  
   position: fixed;
@@ -26,22 +28,24 @@ header{
 }
 .logo img{
   top: 0.5em;
-  position: fixed;
+  position: relative;
   z-index: 100;
   left: 5%;
   width: 75px;
   pointer-events: none;
-  transition: 0.8s;
-
+}
+.logo.active img {
+  position: fixed;
+  transition: 1s all ease;
 }
 .navbar__left{
   position: relative;
   z-index: 15;
-  left: -50%;
+  left: -60%;
   top: 0;
-  width: 50%;
+  width: 60%;
   height: 100vh;
-  background: salmon;
+  background: #0a69a1;
   transition: 0.8s;
 }
 .navbar__left.active{
@@ -78,11 +82,16 @@ header{
   opacity: 0.5;
 }
 .navbar__left--contact {
+  color: #c3e2f5;
+  line-height: 1.5em;
   position: absolute;
   opacity: 0;
   bottom: 5%;
   left: 0;
   pointer-events: none;
+}
+.large {
+  font-weight: bold;
 }
 .navbar__left--contact.active {
   opacity: 1;
@@ -94,20 +103,20 @@ header{
   z-index: 10;
   left: -50%;
   top: 0;
-  width: 50%;
+  width: 40%;
   height: 100vh;
   background-color: black;
-  transition: 0.8s;  
+  transition: 0.7s;  
 }
 .navbar__right.active{
-  left: 50%;
+  left: 60%;
   transition: 0.5s;
 }
 .navbar__menuBtn {
   position: fixed;
   z-index: 100;
   right: 3.5%;
-  top: 1.5rem;
+  top: 1.75rem;
   width: 2em;
   height: 2em;
   cursor: pointer;
@@ -162,4 +171,9 @@ header{
 .contact {
 }
 .footer {
+}
+
+/*  R E C U R S O S  */
+.content {
+  
 }
