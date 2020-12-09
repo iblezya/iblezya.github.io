@@ -21,6 +21,9 @@
         var ladoB = Number($("#ladoB").val());
         var ladoC = Number($("#ladoC").val());
         //P R O C E S S
+        $("#equilatero").hide();
+        $("#escaleno").hide();
+        $("#isosceles").hide();
         var existe = esTriangulo(ladoA, ladoB, ladoC) ? "Existe" : "No existe";
         var tipo = tipoTriangulo(ladoA,ladoB,ladoC);
         var perimetro = calcularPerimetro(ladoA, ladoB, ladoC);
@@ -53,8 +56,6 @@
             tipo = "ESCALENO"
             $("#escaleno").show(500);
           }
-        } else {
-        $(".triangule__image").hide();
         }
         // Devolver el valor del tipo
         return tipo;
