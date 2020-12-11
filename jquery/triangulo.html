@@ -25,9 +25,32 @@
         $("#escaleno").hide();
         $("#isosceles").hide();
         var existe = esTriangulo(ladoA, ladoB, ladoC) ? "Existe" : "No existe";
-        var tipo = tipoTriangulo(ladoA,ladoB,ladoC);
+        if (esTriangulo(ladoA,ladoB,ladoC)) {
+          // $("#existe").css("color","green");
+          // $("#existe").css("background", "white");
+          $("#existe").css({"color":"green", "background":"white"});
+        } else {
+          // $("#existe").css("background", "red");
+          // $("#existe").css("color", "white");
+          $("#existe").css({"background":"red", "color":"white"});
+        }
+        var tipo = tipoTriangulo(ladoA,ladoB,ladoC);        
         var perimetro = calcularPerimetro(ladoA, ladoB, ladoC);
         var area = calcularArea(ladoA,ladoB,ladoC);
+        if (tipo == "EQUILATERO") {
+          // $("#tipo").css("color", "#06d6a0");
+          // $("#tipo").css("font-family", "Helvetica");
+          // JSON : { propiedad:valor, ...}
+          $("#tipo").css({ "color": "#06d6a0", "font-family": "Helvetica" });
+        } else if (tipo == "ISOCELES") {
+          // $("#tipo").css("font-family", "Serif");
+          // $("#tipo").css("color", "#0096c7");
+          $("#tipo").css({ "color": "#0096c7", "font-family": "Serif" });
+        } else {
+          // $("#tipo").css("color", "#e29578");
+          // $("#tipo").css("font-family", "Tahoma");
+          $("#tipo").css({ "color": "#e29578", "font-family": "Tahoma" });
+        }
         // O U T P U T
         $("#existe").html("Existencia : " + existe);
         $("#tipo").html("Tipo : " + tipo);
@@ -47,7 +70,7 @@
         if (esTriangulo(a, b, c)) {
           // Evaluando el tipo de triangulo
           if ((a === b) && (b === c) && (a === c)) {
-            tipo = "EQUILATRO"
+            tipo = "EQUILATERO"
             $("#equilatero").show(500);
           } else if ((a === b) || (b === c) || (a === c)) {
             tipo = "ISOCELES"

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script text="text/javascript">
+      var miObjetoAJAX;
+      var miPaginaAJAX;
+      const cargarNoticia = () => {
+        // Crear y configurar el objeto ajax: XMLHTtpRequest
+        miObjetoAJAX = new XMLHttpRequest(); // Instancia el objeto
+        miObjetoAJAX.onreadystatechange = () => {
+          if (miObjetoAJAX.readyState == 4 & miObjetoAJAX.status == 200) {
+            //alert("Win");
+            // Escribir en la pagino
+            document.getElementById("container__noticia").innerHTML = miObjetoAJAX.responseText;
+          }
+          //alert(miObjetoAJAX.readyState);
+          //alert(miObjetoAJAX.status);
+        }
+        miObjetoAJAX.open("GET","msj.txt",true) // 2.Abrir la conexion al servidor
+        miObjetoAJAX.send(); // 3. Enviar la solicitud
+      }
+      const visualizarPagina = () => {
+        // Crear y configurar el objeto ajax: XMLHTtpRequest
+        miPaginaAJAX = new XMLHttpRequest(); // Instancia el objeto
+        miPaginaAJAX.onreadystatechange = () => {
+          if (miPaginaAJAX.readyState == 4 & miPaginaAJAX.status == 200) {
+            // Escribir en la pagino
+            document.getElementById("pagina").innerHTML = miPaginaAJAX.responseText;
+          }
+        }
+        miPaginaAJAX.open("GET","../pruebas.html",true) // 2.Abrir la conexion al servidor
+        miPaginaAJAX.send(); // 3. Enviar la solicitud
+      }
+  </script>
+  <title>Ajax</title>
+</head>
+<body>
+  <h1>Ajax</h1>
+  <section class="container">
+    <div class="envio1">
+      <label>Dato 1</label>
+      <input type="text" class="envio1__input">
+    </div>
+    <div class="envio2">
+      <label>Dato 2</label>
+      <input type="text" class="envio2__input">
+    </div>
+    <div class="envio3">
+      <label>Dato 3</label>
+      <input type="text" class="envio3__input">
+    </div>
+    <br>
+    <button onclick="cargarNoticia()">Ver noticia</button>
+    <br>
+    <br>
+    <button onclick="visualizarPagina()">Cargar pagina</button>
+  </section>
+  <section class="container">
+    <p id="container__noticia"></p>
+  </section>
+  <div id="pagina">
+
+  </div>
+</body>
+</html>
