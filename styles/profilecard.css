@@ -23,7 +23,7 @@
   width: 400px;
   height: 450px;
   background: white;
-  border-radius: 10px;
+  border-radius: 18px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 123px 52px 52px 123px 100px;
