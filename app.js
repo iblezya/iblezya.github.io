@@ -1,5 +1,5 @@
 let menuBtn = document.querySelector('.navbar__menuBtn');
-let nav = document.querySelector('.navbar');
+let nav = document.querySelector('.navbarc');
 let navLeft = document.querySelector('.navbar__left');
 let navRight = document.querySelector('.navbar__right');
 let contact = document.querySelector('.navbar__left--contact');
@@ -26,8 +26,8 @@ menuBtn.addEventListener('click', () => {
       navLinks[i].classList.remove('active');
       setTimeout(() => {
         navLinks[i].classList.add('active');
-      },i*200)
-      
+      }, i * 200)
+
     }
     setTimeout(() => {
       contact.classList.add('active');
